@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8520e51-64fd-4c09-943b-15b5b95f0368" name="Changes" comment="Fixed black lines problem (mostly)">
+    <list default="true" id="d8520e51-64fd-4c09-943b-15b5b95f0368" name="Changes" comment="Restructured project: created class Label that handles the conversion of the pdf">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/DHLNational.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Dimensions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/LabelType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" afterDir="false" />
@@ -17,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -93,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665387224673</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Restructured project: created class Label that handles the conversion of the pdf">
+      <created>1665388465690</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665388465690</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +122,7 @@
     <MESSAGE value="Extracted subimages from pdf" />
     <MESSAGE value="Rotate function implemented" />
     <MESSAGE value="Fixed black lines problem (mostly)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed black lines problem (mostly)" />
+    <MESSAGE value="Restructured project: created class Label that handles the conversion of the pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructured project: created class Label that handles the conversion of the pdf" />
   </component>
 </project>

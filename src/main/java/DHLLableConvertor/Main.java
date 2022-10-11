@@ -16,7 +16,7 @@ public class Main {
 // TODO add user prompt
         File file = new File("/Users/hanni/Downloads/DHL-Paketmarke_F34WAFNXQD9A_1_iFixit_GmbH__.pdf");
         PDDocument pd = PDDocument.load(file);
-        Label.createLabel(pd);
+        Label.createLabel(pd, "DHLNational");
     }
 
 }
