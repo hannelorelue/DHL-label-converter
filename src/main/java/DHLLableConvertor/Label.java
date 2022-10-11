@@ -15,18 +15,18 @@ import java.util.Optional;
 public class Label {
     PDDocument pd;
     public static void createLabel(PDDocument pd, String Label) throws IOException {
-
         PDFRenderer pr = new PDFRenderer (pd);
         BufferedImage bi = pr.renderImageWithDPI (0, 300);
+
         LabelType labelType = new DHLNational(bi);
-        switch (Label){
-            case "DHLNational":
-            labelType = new DHLNational(bi);
-                break;
-            default:
-                System.out.println("Not a valid type.");
-        }
-        try {
+//        switch (Label){
+//            case "DHLNational":
+//            labelType = new DHLNational(bi);
+//                break;
+//            default:
+//                System.out.println("Not a valid type.");
+//        }
+//        try {
             BufferedImage[] labelParts = cutImage(bi, labelType);
             File outfile = new File("/Users/hanni/Programming/Java/test3/label.png");
             BufferedImage ni = joinLabel(labelParts);
@@ -34,9 +34,9 @@ public class Label {
             // format 62mm x 180mm
             System.out.println("Width: " + bi.getWidth());
             System.out.println("Height: " + bi.getHeight());
-        } catch(Exception e) {
-            System.out.println("Not a valid label type.");
-        }
+//        } catch(Exception e) {
+//            System.out.println("Not a valid label type.");
+//        }
 
     }
 
