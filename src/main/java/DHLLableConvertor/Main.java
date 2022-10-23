@@ -17,13 +17,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
 // TODO add user prompt
         Scanner userInput = new Scanner(System.in);
-        System.out.println("Enter path of the DHLlabel pdf: ");
-
-        String filePath = userInput.nextLine();
-      //  File file = new File("/Users/hanni/Downloads/DHL-Paketmarke_F34WAFNXQD9A_1_iFixit_GmbH__.pdf");
-        File file = new File(filePath);
+        //String filePath = userInput.nextLine();
+        File file = new File("/Users/hanni/Downloads/DHL-Paketmarke_F8BCP7XSBBSF_1_Abijah_thiagarajah_.pdf");
+        //File file = new File(filePath);
         PDDocument pd = PDDocument.load(file);
-        Label.createLabel(pd, "DHLNational");
+        Label.createLabel(pd, "DHLInternational");
     }
 
 }

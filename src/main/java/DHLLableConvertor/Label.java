@@ -17,35 +17,34 @@ public class Label {
     public static void createLabel(PDDocument pd, String Label) throws IOException {
         PDFRenderer pr = new PDFRenderer (pd);
         BufferedImage bi = pr.renderImageWithDPI (0, 300);
+        System.out.println(bi.getHeight());
 
-        LabelType labelType = new DHLNational(bi);
-//        switch (Label){
-//            case "DHLNational":
-//            labelType = new DHLNational(bi);
-//                break;
-//            default:
-//                System.out.println("Not a valid type.");
-//        }
-//        try {
+        LabelType labelType = new LabelType();
+
+       switch (Label){
+           case "DHLInternational":
+            labelType = new DHLInternational();
+                break;
+
+                default:
+                    labelType = new DHLNational();
+        }
+
             BufferedImage[] labelParts = cutImage(bi, labelType);
             File outfile = new File("/Users/hanni/Programming/Java/test3/label.png");
             BufferedImage ni = joinLabel(labelParts);
             ImageIO.write(ni, "png", outfile);
-            // format 62mm x 180mm
-            System.out.println("Width: " + bi.getWidth());
-            System.out.println("Height: " + bi.getHeight());
-//        } catch(Exception e) {
-//            System.out.println("Not a valid label type.");
-//        }
+//            // format 62mm x 180mm
+
 
     }
 
     private static BufferedImage[] cutImage(BufferedImage bi, LabelType labelType) {
-        BufferedImage header = bi.getSubimage(labelType.header.x, labelType.header.y, labelType.header.width, labelType.header.height);
-        BufferedImage securityCode = bi.getSubimage(labelType.securityCode.x, labelType.securityCode.y, labelType.securityCode.width , labelType.securityCode.height);
-        BufferedImage addresses = bi.getSubimage(labelType.addresses.x, labelType.addresses.y, labelType.addresses.width , labelType.addresses.height);
-        BufferedImage trackingNumber = bi.getSubimage(labelType.trackingNumber.x, labelType.trackingNumber.y, labelType.trackingNumber.width , labelType.trackingNumber.height);
-        BufferedImage barcodes= bi.getSubimage(labelType.barcodes.x, labelType.barcodes.y, labelType.barcodes.width , labelType.barcodes.height);
+        BufferedImage header = cutByDimensions(bi,labelType.header);
+        BufferedImage securityCode = cutByDimensions(bi,labelType.securityCode);
+        BufferedImage addresses = cutByDimensions(bi,labelType.addresses);
+        BufferedImage trackingNumber = cutByDimensions(bi,labelType.trackingNumber);
+        BufferedImage barcodes= cutByDimensions(bi,labelType.barcodes);
         BufferedImage[] Images  = {header, securityCode, addresses, trackingNumber, barcodes};
         return Images;
     }
@@ -65,7 +64,7 @@ public class Label {
         g2d.drawImage(scale(Images[1], 400), null, 900, 120);
         g2d.drawImage(scale(Images[2], 750), null, 0, 120);
         g2d.drawImage(scale(Images[3], 1300), null, 0, 695);
-        g2d.drawImage(Images[4], null, width/2, 0);
+        g2d.drawImage(scale(Images[4], 1200), null, width/2, 0);
         g2d.dispose();
         return newImage;
     }
@@ -98,5 +97,9 @@ public class Label {
         g2d.drawImage(before, scaleOp, 0, 0);
         g2d.dispose();
         return after;
+    }
+
+    private static BufferedImage cutByDimensions (BufferedImage bi, Dimensions dimensions){
+        return bi.getSubimage(dimensions.x, dimensions.y, dimensions.width, dimensions.height);
     }
 }
