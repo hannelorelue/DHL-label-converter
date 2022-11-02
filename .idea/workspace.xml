@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8520e51-64fd-4c09-943b-15b5b95f0368" name="Changes" comment="plugintest">
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/DHLInternational.java" afterDir="false" />
+    <list default="true" id="d8520e51-64fd-4c09-943b-15b5b95f0368" name="Changes" comment="added parser">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/DHLNational.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/DHLNational.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Dimensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Dimensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/LabelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/LabelType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665502518899</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added DHL international format and fixed problem with NullPointerException">
+      <created>1666517624882</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666517624882</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +129,8 @@
     <MESSAGE value="Restructured project: created class Label that handles the conversion of the pdf" />
     <MESSAGE value="created abstract class LabelType. Addded Instance of LabelType: DHLNational" />
     <MESSAGE value="plugintest" />
-    <option name="LAST_COMMIT_MESSAGE" value="plugintest" />
+    <MESSAGE value="Added DHL international format and fixed problem with NullPointerException" />
+    <MESSAGE value="added parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="added parser" />
   </component>
 </project>

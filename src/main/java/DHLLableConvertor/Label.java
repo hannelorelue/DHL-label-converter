@@ -10,10 +10,9 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Optional;
+
 
 public class Label {
-    PDDocument pd;
     public static void createLabel(PDDocument pd, String Label) throws IOException {
         PDFRenderer pr = new PDFRenderer (pd);
         BufferedImage bi = pr.renderImageWithDPI (0, 300);
@@ -22,7 +21,7 @@ public class Label {
         LabelType labelType = new LabelType();
 
        switch (Label){
-           case "DHLInternational":
+           case "b":
             labelType = new DHLInternational();
                 break;
 
@@ -45,14 +44,12 @@ public class Label {
         BufferedImage addresses = cutByDimensions(bi,labelType.addresses);
         BufferedImage trackingNumber = cutByDimensions(bi,labelType.trackingNumber);
         BufferedImage barcodes= cutByDimensions(bi,labelType.barcodes);
-        BufferedImage[] Images  = {header, securityCode, addresses, trackingNumber, barcodes};
-        return Images;
+        return new BufferedImage[]{header, securityCode, addresses, trackingNumber, barcodes};
     }
     
     private static BufferedImage joinLabel(BufferedImage [] parts) {
-        BufferedImage[] Images  = parts;
-        for (int i = 0; i < Images.length; i++) {
-            Images[i] = rotate(Images[i], 90);
+        for (int i = 0; i < parts.length; i++) {
+            parts[i] = rotate(parts[i], 90);
         }
         int width = 2613;
         int height = 900;
@@ -60,11 +57,11 @@ public class Label {
         Graphics2D g2d = newImage.createGraphics();
         g2d.setPaint(Color.WHITE);
         g2d.fillRect(0, 0, width, height);
-        g2d.drawImage(scale(Images[0], 1300), null, 0, 0);
-        g2d.drawImage(scale(Images[1], 400), null, 900, 120);
-        g2d.drawImage(scale(Images[2], 750), null, 0, 120);
-        g2d.drawImage(scale(Images[3], 1300), null, 0, 695);
-        g2d.drawImage(scale(Images[4], 1200), null, width/2, 0);
+        g2d.drawImage(scale(parts[0], 1300), null, 0, 0);
+        g2d.drawImage(scale(parts[1], 400), null, 900, 120);
+        g2d.drawImage(scale(parts[2], 750), null, 0, 120);
+        g2d.drawImage(scale(parts[3], 1300), null, 0, 695);
+        g2d.drawImage(scale(parts[4], 1200), null, width/2, 0);
         g2d.dispose();
         return newImage;
     }
