@@ -1,4 +1,4 @@
-package DHLLableConvertor;
+package org.DHLLabelConvertor;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
@@ -13,10 +13,10 @@ import java.io.IOException;
 
 
 public class Label {
-    public static void createLabel(PDDocument pd, String Label) throws IOException {
+    public static void createLabel(PDDocument pd, String Label, String outFolder) throws IOException {
         PDFRenderer pr = new PDFRenderer (pd);
         BufferedImage bi = pr.renderImageWithDPI (0, 300);
-        System.out.println(bi.getHeight());
+        //System.out.println(bi.getHeight());
 
         LabelType labelType = new LabelType();
 
@@ -30,10 +30,12 @@ public class Label {
         }
 
             BufferedImage[] labelParts = cutImage(bi, labelType);
-            File outfile = new File("/Users/hanni/Programming/Java/test3/label.png");
+            String filePath = outFolder.substring(0,outFolder.lastIndexOf("/")+1)+ outFolder.substring(outFolder.lastIndexOf("/")+1,outFolder.lastIndexOf("."))+ "slimLabel.png";
+           // System.out.println(filePath);
+            File outfile = new File(filePath);
             BufferedImage ni = joinLabel(labelParts);
             ImageIO.write(ni, "png", outfile);
-//            // format 62mm x 180mm
+            // format 62mm x 180mm
 
 
     }
@@ -84,10 +86,9 @@ public class Label {
         int h = before.getHeight();
         int aspectRatio = w/h;
         // Create a new image of the proper size
-        int w2 = newWidth;
-        int h2 = w2/aspectRatio;
-        double scale = (double) w2/w;
-        BufferedImage after = new BufferedImage(w2, h2, BufferedImage.TYPE_INT_ARGB);
+        int h2 = newWidth /aspectRatio;
+        double scale = (double) newWidth /w;
+        BufferedImage after = new BufferedImage(newWidth, h2, BufferedImage.TYPE_INT_ARGB);
         AffineTransform scaleInstance = AffineTransform.getScaleInstance(scale, scale);
         AffineTransformOp scaleOp = new AffineTransformOp(scaleInstance, AffineTransformOp.TYPE_BILINEAR);
         Graphics2D g2d = (Graphics2D) after.getGraphics();

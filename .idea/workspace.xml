@@ -7,8 +7,12 @@
     <list default="true" id="d8520e51-64fd-4c09-943b-15b5b95f0368" name="Changes" comment="added parser">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/DHLInternational.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/DHLLabelConvertor/DHLInternational.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/DHLNational.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/DHLLabelConvertor/DHLNational.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Dimensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/DHLLabelConvertor/Dimensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/DHLLabelConvertor/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/LabelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/DHLLabelConvertor/LabelType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DHLLableConvertor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/DHLLabelConvertor/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,21 +39,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -108,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666517624882</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added parser">
+      <created>1667406578936</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667406578936</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

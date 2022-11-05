@@ -1,4 +1,4 @@
-package DHLLableConvertor;
+package org.DHLLabelConvertor;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,12 +11,11 @@ import net.sourceforge.argparse4j.inf.Namespace;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-// TODO add user prompt
 
         //String filePath = userInput.nextLine();
         ArgumentParser parser = ArgumentParsers
                 .newFor("argparseTest")
-                .build().description("Returns a String");
+                .build().description("Returns a 62mm x 180mm version of a DHL PDF label.");
         parser.addArgument("-path", "-p")
                 .metavar("path")
                 .help("File path of pdf");
@@ -28,16 +27,19 @@ public class Main {
                 .help("a is for national shipping labels (Default), b for international shipping labels");
         try {
             Namespace res = parser.parseArgs(args);
-            System.out.println("file path: " +(String) res.get("path"));
-            File file = new File((String) res.get("path"));
-            System.out.println("Type: " +(String) res.get("type"));
-            PDDocument pd = PDDocument.load(file);
-            Label.createLabel(pd, (String) res.get("type"));
+            try {
+                //System.out.println("file path: " +(String) res.get("path"));
+                File file = new File((String) res.get("path"));
+                //System.out.println("Type: " +(String) res.get("type"));
+                PDDocument pd = PDDocument.load(file);
+                Label.createLabel(pd, res.get("type"), (String) res.get("path"));
+            } catch (NullPointerException n) {
+                System.out.println("Please enter a path to the PDF document with the option -path.");
+            }
+
         } catch (ArgumentParserException e) {
             parser.handleError(e);
         }
-
-
     }
 
 }

@@ -1,6 +1,4 @@
-package DHLLableConvertor;
-
-import java.awt.image.BufferedImage;
+package org.DHLLabelConvertor;
 
 public class LabelType {
     public Dimensions header, securityCode , addresses, trackingNumber, barcodes;

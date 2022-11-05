@@ -1,6 +1,6 @@
-package DHLLableConvertor;
+package org.DHLLabelConvertor;
 
-public class DHLInternational extends LabelType {
+public class DHLNational extends LabelType {
     public Dimensions header, securityCode , addresses, trackingNumber, barcodes;
 
     private static Dimensions initHeader(){
@@ -17,11 +17,10 @@ public class DHLInternational extends LabelType {
         return new Dimensions(970, 230, 160 , 3506/2-449);
     }
     private static Dimensions initBarcodes(){
-        return new Dimensions(1486, 230, 930 , 3506/2-449);
+        return new Dimensions(1486, 230, 852 , 3506/2-449);
     }
 
-    public DHLInternational() {
+    public DHLNational() {
         super(initHeader(), initSecurityCode(), initAddresses(), initTrackingNumber(), initBarcodes());
     }
 }
-

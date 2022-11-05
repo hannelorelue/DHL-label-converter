@@ -1,4 +1,4 @@
-package DHLLableConvertor;
+package org.DHLLabelConvertor;
 
 public class Dimensions {
     public int x;
