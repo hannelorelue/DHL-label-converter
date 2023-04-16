@@ -10,7 +10,7 @@ Create an executable .jar file with maven
 
 Execute the .jar file with 
 
-java -jar [filename.jar] -path /../dhllabel.pdf (-type)
+`java -jar [filename.jar] -path /../dhllabel.pdf (-type)`
 
 ## Options
 
