@@ -1,6 +1,6 @@
-# DHL Label Converter
+# DHL Label Converter 📦
 
-This command line tool converts pdf labels from the offical website to a 62mm x 180mm png version that can be printed on smaller label printers such as the Brother QL-700.
+This command line tool converts PDF labels from the DHL offical website to a 62mm x 180mm PNG version that can be printed on smaller label printers such as the Brother QL-700.
 
 ## Usage:
 
